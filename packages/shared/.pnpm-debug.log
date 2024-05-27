@@ -1,0 +1,24 @@
+{
+  "0 debug pnpm:scope": {
+    "selected": 1,
+    "workspacePrefix": "/Users/chenchong/Documents/cc_react"
+  },
+  "1 info pnpm": {
+    "err": {
+      "name": "Error",
+      "message": "not found: build:dev",
+      "code": "ENOENT",
+      "stack": "Error: not found: build:dev\n    at getNotFoundError (/Users/chenchong/.config/yarn/global/node_modules/pnpm/dist/pnpm.cjs:41759:51)\n    at Function.whichSync [as sync] (/Users/chenchong/.config/yarn/global/node_modules/pnpm/dist/pnpm.cjs:41836:13)\n    at getCommandAbsolutePathSync (/Users/chenchong/.config/yarn/global/node_modules/pnpm/dist/pnpm.cjs:43401:44)\n    at default_1 (/Users/chenchong/.config/yarn/global/node_modules/pnpm/dist/pnpm.cjs:43410:32)\n    at /Users/chenchong/.config/yarn/global/node_modules/pnpm/dist/pnpm.cjs:178873:39"
+    }
+  },
+  "2 error pnpm": {
+    "code": "ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL",
+    "prefix": "/Users/chenchong/Documents/cc_react/packages/shared",
+    "err": {
+      "name": "pnpm",
+      "message": "not found: build:dev",
+      "code": "ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL",
+      "stack": "Error: not found: build:dev\n    at getNotFoundError (/Users/chenchong/.config/yarn/global/node_modules/pnpm/dist/pnpm.cjs:41759:51)\n    at Function.whichSync [as sync] (/Users/chenchong/.config/yarn/global/node_modules/pnpm/dist/pnpm.cjs:41836:13)\n    at getCommandAbsolutePathSync (/Users/chenchong/.config/yarn/global/node_modules/pnpm/dist/pnpm.cjs:43401:44)\n    at default_1 (/Users/chenchong/.config/yarn/global/node_modules/pnpm/dist/pnpm.cjs:43410:32)\n    at /Users/chenchong/.config/yarn/global/node_modules/pnpm/dist/pnpm.cjs:178873:39"
+    }
+  }
+}
