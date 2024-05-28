@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // 递归中的归阶段
 /**
  *需要解决的问题:
@@ -13,7 +14,8 @@ import {
 import {
 	createInstance,
 	appendInitialChild,
-	createTextInstance
+	createTextInstance,
+	Container
 } from 'hostConfig';
 import { NoFlags } from './fiberFlags';
 
@@ -29,7 +31,7 @@ export const completeWork = (wip: FiberNode) => {
 			} else {
 				// mount
 				// 构建离屏 DOM，同时记录 props 到 DOM 上
-				const instance = createInstance(wip.type, newProps); //dom节点
+				const instance = createInstance(wip.type); //dom节点
 				// 将子 fiber 创建好的 DOM 插入到 dom树 中
 				appendAllChildren(instance, wip);
 				// 将当前插入完成的更大的 DOM 树位置记录在 FiberNode 中
@@ -59,7 +61,7 @@ export const completeWork = (wip: FiberNode) => {
 	}
 };
 
-function appendAllChildren(parent: FiberNode, wip: FiberNode) {
+function appendAllChildren(parent: Container, wip: FiberNode) {
 	// 插入的应该是组件中的实际节点
 	// 比如对于函数组件，应该插入的是函数组件中经过递归找到的实际的节点
 
