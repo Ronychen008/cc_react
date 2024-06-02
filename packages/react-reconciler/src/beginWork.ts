@@ -64,14 +64,13 @@ function updateHostComponent(wip: FiberNode) {
 function reconcileChildren(wip: FiberNode, children?: ReactElementType) {
 	// 获取父节点的 current fiberNode 来对比，返回 wip 的子 fiberNode
 	const current = wip.alternate;
-	if (current === null) {
-		// 首次渲染
-		wip.child = mountChildFibers(wip, null, children);
-	} else {
+	if (current !== null) {
 		// 首次渲染过程中，只有 HostRoot 会走到这里
 		// 因为在 renderRoot 时，通过创建 wip，使得它是唯一的存在 wip 和 current 的 fiberNode
-
 		// 更新
-		wip.child = reconcileChildFibers(wip, current.child, children);
+		wip.child = reconcileChildFibers(wip, current?.child, children);
+	} else {
+		// 首次渲染
+		wip.child = mountChildFibers(wip, null, children);
 	}
 }
